@@ -5,7 +5,7 @@ services:
     image: redis:7.0
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     ports:
-      - 6379:6379
+      - 1000$VID:6379
     volumes:
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
     healthcheck:
@@ -45,7 +45,7 @@ services:
     environment:
       MTX_PROTOCOLS: tcp
     ports:
-      - 8554:8554
+      - 855$VID:8554
 
   geo-mapper:
     image: ${IMAGE_REGISTRY}/sae-geo-mapper:${GEO_MAPPER_VERSION}
